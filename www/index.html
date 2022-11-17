@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <!-- <meta name="color-scheme" content="light dark"> -->
+        <script  src="lib/jquery.min.js"></script>
+        <script  src="lib/jquery.mobile-1.4.5.min.js"></script>
+        <script  src="js/index.js"></script>
+        <script src="cordova.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+       
+        <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
+        
+        <title>SunuContact</title>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="header">
+                <h1>SunuContact</h1>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>M1IABD &copy; Octobre 2022</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <a href="#addContact" data-role="button" data-icon="plus" data-iconpos='notext'>Ajouter </a>
+                <ul id="contactList" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Rechercher un contact">
+                    <li>
+                        <a href="#">
+                          <img src="img/1__.png" alt="avatar-contact">
+                          <h2>Moussa Diakité</h2>
+                          <p>77 400 34 54</p>  
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                          <img src="img/2__.jpeg" alt="avatar-contact">
+                          <h2>Moussa Dadis</h2>
+                          <p>77 403 34 54</p>  
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                          <img src="img/4__.jpeg" alt="avatar-contact">
+                          <h2>Fatou Ba</h2>
+                          <p>77 303 34 54</p>  
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+ 
+        <div data-role="page" id="addContact">
+            <div data-role="header">
+                <a href="#" data-rel="back" data-incon="home" data-inconpos="notext"></a>
+                <h1>SunuContact</h1> 
+            </div>
+            <div role="main" class="ui-content">
+                <div data-role="header">
+                    <h1>Ajout contact </h1>
+                </div>
+                <form >
+                    <input type="text" id="prenom" placeholder="Prénom">
+                    <input type="text" id="nom" placeholder="Nom">
+                    <input type="tel" id="telephone" placeholder="Téléphone">
+                    <input type="button" value="Ajouter" data-incon='plus' data-inconpos="right"/> 
+                </form>
+            </div>
+            
+            <div data-role="footer" data-position="fixed">
+                <h1>M1IABD &copy; Octobre 2022</h1>
+            </div>
+        </div>
+
+        <div id="showpage" data-role="page">
+            <div data-role="header">
+                <h2>Afficher contact</h2>
+            </div>
+            <div data-role="main" >
+                <ul id="showContact" data-role="listview">
+
+                </ul>>
+            </div>
+           
+        </div>
+
+        <div id="editpage" data-role="page" class="ui-content">    <div data-role="header">
+                <h2>Modifier un contact</h2>
+            </div>
+            
+            <div data-role="main">
+            
+            
+                <label for="nom">Nom</label><input type="text" name="nom" id="nom">
+                <label for="prenom">Prenom</label> <input type="text" name="prenom" id="prenom">
+                <label for="tel">Telephone</label>  <input type="tel" name="tel" id="tel">
+                <a onclick="editContact()" href="#home" data-role="button">modifier</a>
+                
+            </div>
+        </div>
+    </body>
+</html>
